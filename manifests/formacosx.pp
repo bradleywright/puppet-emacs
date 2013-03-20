@@ -20,7 +20,7 @@ class emacs::formacosx {
   }
 
   file { "${boxen::config::envdir}/emacs-macosx.sh":
-    content => template('emacs/macosx-env.sh.erb'),
+    content => file('emacs/macosx-env.sh'),
     require => File[$boxen::config::envdir]
   }
 }
