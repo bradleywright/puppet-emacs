@@ -1,1 +1,2 @@
 export PATH=/Applications/Emacs.app/Contents/MacOS/bin/:$PATH
+alias emacs=/Applications/Emacs.app/Contents/MacOS/Emacs-10.7
