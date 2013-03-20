@@ -7,7 +7,7 @@ class emacs::formacosx {
   package { 'Emacs':
     provider => 'appdmg',
     source   => 'http://emacsformacosx.com/emacs-builds/Emacs-24.3-universal-10.6.8.dmg',
-    notify   => 'fix-emacs-termcap',
+    notify   => Exec['fix-emacs-termcap'],
   }
 
   # So ansi-term behaves itself: http://stackoverflow.com/a/8920373
