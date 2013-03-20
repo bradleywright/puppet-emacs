@@ -12,7 +12,15 @@ class emacs::formacosx {
 
   # So ansi-term behaves itself: http://stackoverflow.com/a/8920373
   exec { 'fix-emacs-termcap':
-    command     => 'tic -o ~/.terminfo /Applications/Emacs.app/Contents/Resources/etc/e/eterm-color.ti',
+    command     => 'tic -o \
+      ~/.terminfo \
+      /Applications/Emacs.app/Contents/Resources/etc/e/eterm-color.ti',
+    provider    => shell,
     refreshonly => true,
+  }
+
+  file { "${boxen::config::envdir}/emacs-macosx.sh":
+    content => template('emacs/macosx-env.sh.erb'),
+    require => File[$boxen::config::envdir]
   }
 }
