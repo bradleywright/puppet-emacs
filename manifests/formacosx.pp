@@ -6,7 +6,7 @@
 class emacs::formacosx {
   package { 'Emacs':
     provider => 'appdmg',
-    source   => 'http://emacsformacosx.com/emacs-builds/Emacs-24.3-universal-10.6.8.dmg',
+    source   => 'http://emacsformacosx.com/emacs-builds/Emacs-24.4-universal.dmg',
     notify   => Exec['fix-emacs-termcap'],
   }
 
